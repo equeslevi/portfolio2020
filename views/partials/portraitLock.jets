@@ -1,0 +1,9 @@
+<div id="portraitLock" class="jumbotron-fluid bg-light text-center p-2 d-none" style="z-index: 99999;">
+    <div class='m-3 d-flex justify-content-center'>
+	    <strong>
+	    Device is in landscape mode.Please switch into portrait mode to view page properly
+	    </strong>
+    </div>
+    <img class="img-fluid"  src="/images/portraitLock.gif">
+</div>
+<div id='portraitLockValue' class='d-none'>{{portraitLock}}</div>

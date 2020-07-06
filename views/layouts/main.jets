@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {{{body}}}
+
+<!-- JQUERY CDN BUNDLE -->
+   <script type="text/javascript" src="/js/jquery.min.js"></script>
+<!-- BOOTSTRAP BUNDLE -->
+  <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+<!-- DATATABLE BUNDLE -->
+  <script type="text/javascript" src='/js/jquery.dataTables.min.js'></script>
+<!-- CUSTOM JS -->
+  <script type="text/javascript" src='/js/index.js'></script>
+{{#if errorpage}}
+<!-- CUSTOM 404 Script -->
+  <script type="text/javascript" src='/js/404.js'></script>
+{{/if}}
+
+</body>
+
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "portfolio2020",
+  "version": "1.0.0",
+  "description": "Updated Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/equeslevi/portfolio2020.git"
+  },
+  "author": "Robert Justin Eduardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/equeslevi/portfolio2020/issues"
+  },
+  "homepage": "https://github.com/equeslevi/portfolio2020#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "moment": "^2.26.0",
+    "nodemon": "^2.0.4",
+    "tynt": "^1.2.0"
+  }
+}

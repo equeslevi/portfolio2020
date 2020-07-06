@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+    </div>
+    <div class="mx-auto order-0">
+        <a class="navbar-brand mx-auto visibleText-4" href="{{titleurl}}"> {{navtitle}} </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+        </ul>
+    </div>
+</nav>
+
+<div class="centerDiv">
+	<div class="row justify-content-center align-items-center">
+		<div class="col-sm-8 col-lg-4 bg-secondary">
+		  <div id="txt1" class="text-center text-light weight-800 jetfade" style="font-size: 8vh">OOPS</div>
+		  <div id="txt2" class="text-center text-light weight-800 jetfade" style="font-size: 2vh">ERROR 404</div>
+		  <div id="txt3" class="text-center text-light weight-800 jetfade" style="font-size: 3vh">PAGE NOT FOUND</div>
+		  <br>
+		  <div id="homebtn" class="text-center jetfade">
+		  		<a href="/"><button type="button" class="mb-3 btn btn-info weight-800" style="font-size: 3vh">Back to Homepage</button></a>
+		  </div>
+		</div>
+	</div>
+</div>
