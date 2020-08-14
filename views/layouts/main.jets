@@ -10,13 +10,10 @@
 
   <script data-ad-client="ca-pub-2410484337115510" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
-  <!-- Bootstrap core CSS -->
-  <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"> -->
-
   <!-- Custom fonts -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom CSS-->
-  <link href="css/index.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <meta property="og:title" content="{{metaTitle}}">
   <meta property="og:description" content="{{metaDesc}}">
   <meta property="og:image" content="{{metaImg}}">
