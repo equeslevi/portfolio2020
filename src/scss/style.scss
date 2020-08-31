@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import 'colors';
+@import 'mixins';
+@import 'buttons';
+
+* {
+  box-sizing: border-box;
+}
+
+html body {
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+#section1{
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.pos-abs{
+  position: absolute;
+}
+
+.bot-2{
+  bottom: 20%;
+  left: 10%;
+}
+
+.header-text{
+  z-index: 700;
+  top:  20%;
+  left: 10%;
+  font-family: 'Poppins', sans-serif;
+  color: $gray;
+
+  h1{
+    display: block;
+    font-size: 5em;
+    margin: 0;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: $yellow;
+    text-shadow: 4px 4px #bbb;
+  }
+  span{
+    color: white;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: $gray;
+  }
+
+  h3{
+    border-top: 5px solid #bbb;
+    display: block;
+    font-size: 3em;
+    margin: 0;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    text-shadow: 4px 4px #bbb;
+  }
+}
+
+.scene{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../images/bg/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+
+    i {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      animation: animate linear infinite; 
+    }
+
+    @keyframes animate{
+      0% {
+        opacity: 0;
+        transform: translateY(0);
+      }
+      10%,90%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(1500px);
+      }
+    }
+}

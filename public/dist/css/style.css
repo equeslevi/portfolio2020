@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
+/*font colors*/
+/*shadow colors*/
+.loader {
+  border-top: 16px solid #FBC638;
+  border-right: 16px solid #333333;
+  border-bottom: 16px solid #FBC638;
+  border-left: 16px solid #333333;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.btn-lines button {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  background: #FBC638;
+  color: #000;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  font-weight: 800;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+.btn-lines button:hover {
+  background: #333333;
+  color: #FBC638;
+}
+.btn-lines button:before, .btn-lines button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 5px;
+  width: 0;
+  background: #FBC638;
+  transition: 400ms ease all;
+}
+.btn-lines button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+.btn-lines button:hover:before, .btn-lines button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.btn-tour {
+  display: flex;
+  justify-content: center;
+  /**************SVG****************/
+  /* SVG animations */
+}
+.btn-tour .cta {
+  display: flex;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  color: white;
+  background: #333333;
+  transition: 1s;
+  box-shadow: 6px 6px 0 #777777;
+  transform: skewX(-25deg);
+}
+.btn-tour .cta:focus {
+  outline: none;
+}
+.btn-tour .cta:hover {
+  color: #FBC638;
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
+}
+.btn-tour .cta span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 0px;
+}
+.btn-tour .cta:hover span:nth-child(2) {
+  transition: 0.5s;
+  margin-right: 45px;
+}
+.btn-tour span {
+  transform: skewX(15deg);
+}
+.btn-tour span:nth-child(2) {
+  width: 20px;
+  margin-left: 30px;
+  position: relative;
+  top: 12%;
+}
+.btn-tour path.one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+.btn-tour path.two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+.btn-tour .cta:hover path.one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+.btn-tour .cta:hover path.two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+.btn-tour .cta:hover path.three {
+  animation: color_anim 1s infinite 0.2s;
+}
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+  50% {
+    fill: #FBC638;
+  }
+  100% {
+    fill: white;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html body {
+  height: 100vh;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#section1 {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.bot-2 {
+  bottom: 20%;
+  left: 10%;
+}
+
+.header-text {
+  z-index: 700;
+  top: 20%;
+  left: 10%;
+  font-family: "Poppins", sans-serif;
+  color: #333333;
+}
+.header-text h1 {
+  display: block;
+  font-size: 5em;
+  margin: 0;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: #FBC638;
+  text-shadow: 4px 4px #bbb;
+}
+.header-text span {
+  color: white;
+  -webkit-text-stroke-width: 4px;
+  -webkit-text-stroke-color: #333333;
+}
+.header-text h3 {
+  border-top: 5px solid #bbb;
+  display: block;
+  font-size: 3em;
+  margin: 0;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  text-shadow: 4px 4px #bbb;
+}
+
+.scene {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../images/bg/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.scene i {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: animate linear infinite;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(1500px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
