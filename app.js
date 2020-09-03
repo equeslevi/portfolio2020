@@ -66,7 +66,7 @@ app.use(express.urlencoded({extended: false}));
 
 const rJmetaTitle = "RJUSTINEDUARDO.COM"
 const rJmetaDesc = "Satisfy all your website needs from frontend to backend"
-const rJmetaImg = "https://rjustineduardo.com/images/meta.png"
+const rJmetaImg = "https://rjustineduardo.com/images/metadata.jpg"
 const rJmetaUrl = "https://rjustineduardo.com/"
 
 //homepage route
