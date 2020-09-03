@@ -4,3 +4,31 @@
 	-ms-border-radius: $radius;
 	border-radius: $radius;
 }
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin abs-pos {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin round($size, $clr, $fsize) {
+  width: $size;
+  height: $size;
+  background-color: $clr;
+  font-size: $fsize;
+  border-radius: 50%;
+}
+
+@mixin hexagon($size, $clr, $fsize) {
+  width: $size;
+  height: $size;
+  background-color: $clr;
+  font-size: $fsize;
+  clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+}

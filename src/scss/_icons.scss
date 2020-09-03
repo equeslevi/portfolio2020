@@ -1,0 +1,15 @@
+.i-container{
+	text-align:center;
+	font-size: 1rem;
+	display: inline-block;
+	margin: 10px;
+}
+
+.i-holder{
+	display: flex; 
+	align-items: center; 
+	justify-content: center;
+	color: $jet;
+	text-shadow: none;
+	@include hexagon(150px, $yellow, 4em);
+}

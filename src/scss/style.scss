@@ -1,41 +1,157 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,700&display=swap');
 @import 'colors';
 @import 'mixins';
+@import 'icons';
 @import 'buttons';
 
-* {
+html {
   box-sizing: border-box;
 }
 
-html body {
-  height: 100vh;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+canvas {
+  @include size(100%);
+}
+
+body {
+  @include size(100%);
+  background-color: #222;
+  background-image: url('https://drive.google.com/uc?export=view&id=0BzFF7FmbJUo5X0NEUXFVd0NBcWc');
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
+  &:after {
+    content: '';
+    @include size(100%);
+    @include abs-pos;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    animation: thunder-bg 6s infinite;
+  }
 }
 
+/* Add a black background color to the top navigation */
+.topnav {
+  position: absolute;
+  width: 100vw;
+  top: 0px;
+  left: 0px;
+  background-color: $jet;
+  overflow: hidden;
+  z-index: 900;
+  border-bottom: 10px solid $jet;
 
+  a {
+    float: left;
+    display: block;
+    color: $white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2em;
+    }
+
+    a:hover {
+      background-color: $yellow;
+      color: $jet;
+    }
+
+    a.active {
+      background-color: $yellow;
+      color: $jet;
+    }
+
+    .icon {
+      display: none;
+    }
+}
+
+/*@media screen and (max-width: 600px) {
+  .topnav{
+      font-size: 2.5em;
+      a:not(:first-child) {display: none;}
+
+      a.icon {
+          float: right;
+          display: block;
+        }
+    } 
+}
+
+@media screen and (max-width: 600px) {
+  .topnav{
+    .responsive {
+      position: relative;
+      a.icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+      a {
+          float: none;
+          display: block;
+          text-align: left;
+      }
+    } 
+  }
+}*/
+
+#loadingDiv{
+  @include abs-pos;
+  height: 100vh;
+  width: 100vw;
+  background: $navy;
+  z-index: 999;
+
+  .load-icon{
+    @include abs-pos;
+    top: 50%;
+    left: 50%;
+    margin-top: -75px;
+    margin-left: -75px;
+  }
+}
 
 #section1{
   height: 100vh;
   overflow-x: hidden;
+
 }
 
 .pos-abs{
   position: absolute;
+  animation: shake 0.5s;
+  animation-iteration-count: 5;
 }
 
 .bot-2{
   bottom: 20%;
   left: 10%;
+  z-index: 105;
 }
 
 .header-text{
-  z-index: 700;
+  z-index: 105;
   top:  20%;
   left: 10%;
   font-family: 'Poppins', sans-serif;
-  color: $gray;
+  color: $jet;
 
   h1{
     display: block;
@@ -43,12 +159,12 @@ html body {
     margin: 0;
     -webkit-text-stroke-width: 4px;
     -webkit-text-stroke-color: $yellow;
-    text-shadow: 4px 4px #bbb;
+    text-shadow: 4px 4px $shadowlight;
   }
   span{
     color: white;
     -webkit-text-stroke-width: 4px;
-    -webkit-text-stroke-color: $gray;
+    -webkit-text-stroke-color: $jet;
   }
 
   h3{
@@ -58,7 +174,7 @@ html body {
     margin: 0;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: white;
-    text-shadow: 4px 4px #bbb;
+    text-shadow: 4px 4px $shadowlight;
   }
 }
 
@@ -66,33 +182,235 @@ html body {
   padding: 0;
   margin: 0;
   position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: url("../../images/bg/bg.jpg");
+  @include size(100%);
+  background-image: url("/images/bg/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   overflow: hidden;
+}
 
-    i {
-      position: absolute;
-      background: #fff;
-      border-radius: 50%;
-      animation: animate linear infinite; 
-    }
 
-    @keyframes animate{
+
+canvas {
+  @include abs-pos;
+}
+
+#canvas3 {
+  z-index: 5;
+}
+
+#canvas2 {
+  z-index: 10;
+}
+
+#canvas1 {
+  z-index: 100;
+}
+
+.thunder {
+  @at-root {
+    @-webkit-keyframes thunder-bg {
       0% {
-        opacity: 0;
-        transform: translateY(0);
+        background-color: $color1;
       }
-      10%,90%{
-        opacity: 1;
+      9% {
+        background-color: $color1;
       }
-      100%{
-        opacity: 1;
-        transform: translateY(1500px);
+      10% {
+        background-color: $color2;
+      }
+      10.5% {
+        background-color: $color1;
+      }
+      80% {
+        background-color: $color1;
+      }
+      82% {
+        background-color: $color2;
+      }
+      83% {
+        background-color: $color1;
+      }
+      83.5% {
+        background-color: $color2;
+      }
+      100% {
+        background-color: $color1;
       }
     }
+  }
+}
+
+#section2{
+  overflow-x: hidden;
+  background: $white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1fr 1fr 0.2fr  1fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+      "head head head head head head"
+      "one one three three two two"
+      "four four four five five five"
+      "skills skills skills skills skills skills"
+      "left left left right right right";
+    align-items: center;
+    background-color: $white;
+  }
+  .head{
+    height: 100%;
+    text-align: center;
+    background: $navy;
+    color: $white;
+    text-shadow: 4px 4px $jet;
+    grid-area: head;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em;
+    font-weight: 800;
+    padding-top: 0.5em;
+  }
+  .principle{
+    height: 100%;
+    padding-top: 5%;
+    text-align: center;
+    background: $navy;
+  }
+  .one {
+    grid-area: one;
+  }
+  .two { 
+    grid-area: two;
+  }
+  .three {
+    grid-area: three;
+  }
+  .four { 
+    grid-area: four;
+  }
+  .five {
+    grid-area: five;
+  }
+
+  .card{
+    margin-right: 10%;
+    margin-left: 10%;
+    padding-bottom: 50px;
+    color: $white;
+    text-shadow: 4px 4px $shadowdark;
+
+    :hover{
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  .card-head{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em;
+    font-weight: 800;
+  }
+
+  .card-body{
+    font-family: 'Open Sans', sans-serif;   
+    font-size: 1.5em;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .skills{
+    height: 100%;
+    text-align: center;
+    background: $navy;
+    color: $white;
+    text-shadow: 4px 4px $jet;
+    grid-area: skills;
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em;
+    font-weight: 800;
+    padding-top: 0.5em;
+  }
+
+  .skills-left{
+    grid-area: left;
+    text-align: left;
+  }
+
+  .skills-right{
+    grid-area: right;
+    text-align: left;
+  }
+
+  .skills-container{
+    font-family: "Poppins", sans-serif;
+    color: $white;
+    font-size: 2.5em;
+    font-weight: 800;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 4%;
+
+    .skillbar{
+      background-color:$yellow!important;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+#section3{
+  display: none;
+}
+@media only screen and (max-width: 1000px) {
+  html body{
+    font-size: 1.2em
+  }
+    #section2{
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.2fr 1fr 0.8fr 1fr 0.2fr 1fr 1fr;
+        grid-template-areas:
+          "head head"
+          "one two"
+          "three three"
+          "four five"
+          "skills skills"
+          "left left"
+          "right right";
+      }
+
+      .head{
+      }
+      .one {
+      }
+      .two { 
+      }
+      .three {
+      }
+
+      .card{
+        margin-right: 5%;
+        margin-left: 5%;
+        padding-bottom: 30px;
+      }      
+    }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

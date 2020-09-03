@@ -3,16 +3,28 @@
 <head>
   <title>test homepage</title>
   <link rel="stylesheet" type="text/css" href="public/dist/css/style.css">
+  <script src="https://kit.fontawesome.com/61150300d4.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="thunder">
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="javascript:void(0);" class="icon" onclick="navBar()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
   <div id="section1">
+    <div class="scene"></div>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
+    <canvas id="canvas3"></canvas>
     <div class="pos-abs header-text">
       <h1>Eduardo<span>,</span></h1>
       <h1>Robert Justin</h1>
       <h3>Web Developer</h3>
     </div>
-    <div class="scene"></div>
-
     <div class="pos-abs bot-2">
       <div class="btn-tour">
         <a class="cta" href="#">
@@ -30,8 +42,164 @@
       </div>
     </div>
   </div>
-  <div class="btn-lines"><button>Start Tour</button></div>
-  <div class="loader"></div>
+
+  <div id="section2">
+
+    <div class="wrapper">
+      <div class="head">
+        CORE PRINCIPLES
+      </div>
+      <div class="principle one">
+        <div class="card">
+          <div class="i-container">
+            <div class="i-holder">
+              <i class="fas fa-rocket"></i>
+            </div>
+          </div>
+          <div class="card-head">
+            Fast connections
+          </div>
+          <div class="card-body">
+            Fast load times and lag free interaction. One of the essentials of modern businesses.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle two">
+        <div class="card">
+          <div class="i-container">
+            <div class="i-holder">
+              <i class="fas fa-lock"></i>
+            </div>
+          </div>
+          <div class="card-head">
+            Secured access
+          </div>
+          <div class="card-body">
+            Securing your websites. Protecting your business. Keeping watch, so you don't have to. 
+          </div>
+        </div>
+      </div>
+
+      <div class="principle three">
+        <div class="card">
+          <div class="i-container">  
+            <div class="i-holder">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+          </div>
+          <div class="card-head">
+            Enhanced compatibility
+          </div>
+          <div class="card-body">
+            Overall responsive design fully compatible with your desktop or mobile devices. Big or small.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle four">
+        <div class="card">
+          <div class="i-container">
+            <div class="i-holder">
+              <i class="fas fa-glasses"></i>
+            </div>
+          </div>
+          <div class="card-head">
+            Accessiblily
+          </div>
+          <div class="card-body">
+            All web apps are built with intuitive UX/UI to be userfriendly and easy to use by everyone.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle five">
+        <div class="card">
+          <div class="i-container">  
+            <div class="i-holder">
+              <i class="fas fa-tools"></i>
+            </div>
+          </div>
+          <div class="card-head">
+            Customability
+          </div>
+          <div class="card-body">
+            The whole app is made only for you. Everything is tailored for you and your customers needs. 
+          </div>
+        </div>
+      </div>
+
+      <div class="skills">
+        SKILLS
+      </div>
+
+      <div class="principle skills-left">
+        <div class="skills-container">
+          <div class="skill-list">
+            <div>
+              <div class="skillbar" style="height:30px;width:95%"></div>
+              HTML
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:75%"></div>
+              CSS
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:90%"></div>
+              Javascript
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:80%"></div>
+              Node.JS
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:60%"></div>
+              Angular.JS
+            </div>
+          </div>
+        </div>        
+      </div>
+
+      <div class="principle skills-right">
+        <div class="skills-container">
+          <div class="skill-list">
+            <div>
+              <div class="skillbar" style="height:30px;width:75%"></div>
+              MongoDB
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:70%"></div>
+              Mongoose
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:80%"></div>
+              Express
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:65%"></div>
+              PHP
+            </div>
+            <div>
+              <div class="skillbar" style="height:30px;width:75%"></div>
+              MySQL
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="section3">
+    <div class="btn-lines"><button>Start Tour <i class="fas fa-fighter-jet"></i></button></div>
+  </div>
+
+  <div id="loadingDiv">
+    <div class="load-icon">
+      <div class="loader"></div>
+    </div>
+  </div>
   <!-- Load Facebook SDK for JavaScript -->
         <div id="fb-root"></div>
         <script>
@@ -53,35 +221,25 @@
         <!-- Your Chat Plugin code -->
         <div class="fb-customerchat"
           attribution=setup_tool
-          page_id="101766855000315">
+          page_id="103393564838578"
+    theme_color="#FBC638"
+    logged_in_greeting="Hello! Do you have any queries?"
+    logged_out_greeting="Hello! Do you have any queries?">
         </div>
-  <!-- Load Facebook SDK for JavaScript -->
 
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="src/js/storm.js"></script>
   <script type="text/javascript">
-    function stars(){
-      let count=500;
-      let scene=document.querySelector('.scene');
-      let i = 0;
-      while(i < count){
-        let star = document.createElement("i")
-        let x = Math.floor(Math.random()* window.innerWidth);
-        let y = Math.floor(Math.random()* (window.innerHeight*0.1*(-1)));
-        let duration = Math.random()*5;
-        let size = Math.random()*2;
-
-        star.style.left = x+'px';
-        star.style.top = y+'px';
-        star.style.width = 1+size+'px';
-        star.style.height = 1+size+'px';
-        star.style.animationDuration = 3+duration+'s';
-        star.style.animationDelay = duration+'s';
-        scene.appendChild(star);
-        i++
-      }
-    }
-    
+    $(document).ready(function() {
+        $("#loadingDiv").fadeOut(1500)
+    });
   </script>
+  <!-- FONT AWESOME CONFLICT DETECTOR
+  <script
+    type="text/javascript"
+    src="https://use.fontawesome.com/releases/v5.14.0/js/conflict-detection.js">
+  </script> -->
+
 </body>
 </html>

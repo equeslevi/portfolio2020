@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>RJustinEduardo.com</title>
 
   <script data-ad-client="ca-pub-2410484337115510" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-  <!-- Custom fonts -->
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/dist/css/style.css">
+  <script src="https://kit.fontawesome.com/61150300d4.js" crossorigin="anonymous"></script>
   <!-- Custom CSS-->
   <link href="css/style.css" rel="stylesheet">
   <meta property="og:title" content="{{metaTitle}}">
@@ -20,22 +14,20 @@
   <meta property="og:url" content="{{metaUrl}}">
 </head>
 
-<body id="page-top" class="bodyBg">
+<body class="thunder">
     {{{body}}}
 
-<!-- JQUERY CDN BUNDLE -->
-   <script type="text/javascript" src="/js/jquery.min.js"></script>
-<!-- BOOTSTRAP BUNDLE -->
-  <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
-<!-- DATATABLE BUNDLE -->
-  <script type="text/javascript" src='/js/jquery.dataTables.min.js'></script>
-<!-- CUSTOM JS -->
-  <script type="text/javascript" src='/js/index.js'></script>
-{{#if errorpage}}
-<!-- CUSTOM 404 Script -->
-  <script type="text/javascript" src='/js/404.js'></script>
-{{/if}}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/js/storm.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#loadingDiv").fadeOut(1500)
 
+      $("#continue-btn").click(function (){
+        $('html,body').animate({scrollTop:$('#section2').offset().top}, 1000);
+      });
+  });
+</script>
 </body>
 
 
