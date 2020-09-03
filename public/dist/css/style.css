@@ -513,7 +513,7 @@ canvas {
 
   #section2 .wrapper {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 0.8fr 1fr 0.2fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.8fr 0.8fr 0.8fr 0.2fr 1fr 1fr;
     grid-template-areas: "head head" "one two" "three three" "four five" "skills skills" "left left" "right right";
   }
   #section2 .card {
