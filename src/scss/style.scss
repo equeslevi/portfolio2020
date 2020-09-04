@@ -249,20 +249,33 @@ canvas {
   padding-top: 10px;
   padding-bottom: 10px;
 
-  .wrapper {
+  .wrapper{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 0.2fr  1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 0.15fr 0.8fr 0.7fr 0.15fr 1fr;
     grid-gap: 10px;
     grid-template-areas: 
-      "head head head head head head"
-      "one one three three two two"
-      "four four four five five five"
-      "skills skills skills skills skills skills"
-      "left left left right right right";
+      "lspc head head head head head head rspc"
+      "lspc one one three three two two rspc"
+      "lspc four four four five five five rspc"
+      "lspc skills skills skills skills skills skills rspc"
+      "lspc left left left right right right rspc";
     align-items: center;
     background-color: $white;
   }
+
+  .spacer-l{
+    grid-area: lspc;
+    height: 100%;
+    background: $jet;
+  }
+
+  .spacer-r{
+    grid-area: rspc;
+    height: 100%;
+    background: $jet;
+  }
+
   .head{
     height: 100%;
     text-align: center;
@@ -355,7 +368,12 @@ canvas {
     padding-right: 10%;
     padding-bottom: 4%;
 
+    .skill-list{
+      border-right: 5px dotted $white;
+    }
+
     .skillbar{
+      margin-top: 3%;
       background-color:$yellow!important;
       display: flex;
       flex-direction: row-reverse;
@@ -373,15 +391,17 @@ canvas {
     #section2{
       .wrapper {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 0.2fr 0.8fr 0.8fr 0.8fr 0.2fr 1fr 1fr;
+        grid-template-rows: 0.15fr 0.7fr 0.6fr 0.7fr 0.05fr 0.15fr 1fr 1fr 0.05fr;
         grid-template-areas:
           "head head"
           "one two"
           "three three"
           "four five"
+          "lspc lspc"
           "skills skills"
           "left left"
-          "right right";
+          "right right"
+          "rspc rspc";
       }
 
       .head{
