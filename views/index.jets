@@ -12,11 +12,11 @@
     <canvas id="canvas2"></canvas>
     <canvas id="canvas3"></canvas>
     <div class="pos-abs header-text">
-      <h1>Eduardo<span>,</span></h1>
-      <h1>Robert Justin</h1>
-      <h3>Web Developer</h3>
+      <h1 class="animate__animated animate__pulse animate__delay-2s">Eduardo<span>,</span></h1>
+      <h1 class="animate__animated animate__pulse animate__delay-2s">Robert Justin</h1>
+      <h3 class="animate__animated animate__pulse animate__delay-2s">Web Developer</h3>
     </div>
-    <div id="continue-btn" class="pos-abs bot-2">
+    <div id="continue-btn" class="pos-abs bot-2 animate__animated animate__backInRight animate__delay-3s">
       <div class="btn-tour">
         <a class="cta" href="#">
           <span>CONTINUE</span>
@@ -38,10 +38,10 @@
 
     <div class="wrapper">
       <div class="head">
-        CORE PRINCIPLES
+        <div data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom">CORE PRINCIPLES</div>
       </div>
       <div class="principle one">
-        <div class="card">
+        <div class="card" data-aos="zoom-in-right" data-aos-anchor-placement="bottom-bottom">
           <div class="i-container">
             <div class="i-holder">
               <i class="fas fa-rocket"></i>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="principle two">
-        <div class="card">
+        <div class="card" data-aos="zoom-in-left" data-aos-anchor-placement="bottom-bottom">
           <div class="i-container">
             <div class="i-holder">
               <i class="fas fa-lock"></i>
@@ -73,7 +73,7 @@
       </div>
 
       <div class="principle three">
-        <div class="card">
+        <div class="card" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
           <div class="i-container">  
             <div class="i-holder">
               <i class="fas fa-laptop-code"></i>
@@ -89,7 +89,7 @@
       </div>
 
       <div class="principle four">
-        <div class="card">
+        <div class="card" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom">
           <div class="i-container">
             <div class="i-holder">
               <i class="fas fa-glasses"></i>
@@ -105,7 +105,7 @@
       </div>
 
       <div class="principle five">
-        <div class="card">
+        <div class="card" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
           <div class="i-container">  
             <div class="i-holder">
               <i class="fas fa-tools"></i>
@@ -120,32 +120,47 @@
         </div>
       </div>
 
-      <div class="skills">
-        SKILLS
+      <div id="skillDiv" class="skills">
+        <div data-aos="zoom-in-down" data-aos-anchor-placement="bottom-bottom">SKILLS</div>
       </div>
 
       <div class="principle skills-left">
         <div class="skills-container">
           <div class="skill-list">
             <div>
-              <div class="skillbar" style="height:30px;width:95%"></div>
-              HTML
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+              	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+              		<div>HTML</div>
+              		<span>95</span>
+          	  	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:75%"></div>
-              CSS
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+                <div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                	<div>CSS</div>
+                	<span>75</span>
+            	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:90%"></div>
-              Javascript
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+                <div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>Javascript</div>
+                  	<span>90</span>
+              	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:80%"></div>
-              Node.JS
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+            	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                	<div>Node.JS</div>
+                	<span>80</span>
+            	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:60%"></div>
-              Angular.JS
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+                <div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>Angular.JS</div>
+                  	<span>70</span>
+              	</div>
             </div>
           </div>
         </div>        
@@ -155,24 +170,39 @@
         <div class="skills-container">
           <div class="skill-list">
             <div>
-              <div class="skillbar" style="height:30px;width:75%"></div>
-              MongoDB
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+              	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>MongoDB</div>
+                  	<span>75</span>
+              	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:70%"></div>
-              Mongoose
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+              	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>Mongoose</div>
+                  	<span>70</span>
+              	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:80%"></div>
-              Express
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+              	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>Express</div>
+                  	<span>80</span>
+              	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:65%"></div>
-              PHP
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+              	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>PHP</div>
+                  	<span>65</span>
+              	</div>
             </div>
             <div>
-              <div class="skillbar" style="height:30px;width:75%"></div>
-              MySQL
+              	<div class="skillbar" data-aos="zoom-out-right" data-aos-anchor-placement="bottom-bottom"></div>
+              	<div class="skill-text" data-aos="zoom-out-left" data-aos-anchor-placement="bottom-bottom">
+                  	<div>MySQL</div>
+                  	<span>75</span>
+              	</div>
             </div>
           </div>
         </div>

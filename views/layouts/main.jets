@@ -4,10 +4,11 @@
   <title>RJustinEduardo.com</title>
 
   <script data-ad-client="ca-pub-2410484337115510" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <link rel="stylesheet" type="text/css" href="/dist/css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
   <script src="https://kit.fontawesome.com/61150300d4.js" crossorigin="anonymous"></script>
   <!-- Custom CSS-->
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/dist/css/style.css">
   <meta property="og:title" content="{{metaTitle}}">
   <meta property="og:description" content="{{metaDesc}}">
   <meta property="og:image" content="{{metaImg}}">
@@ -18,15 +19,73 @@
     {{{body}}}
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script type="text/javascript" src="/dist/js/storm.js"></script>
+
 <script type="text/javascript">
+  var countUpDone = false;
+
+  AOS.init();
+
+  $.fn.isInViewport = function() {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
+  function animateValue(id, start, end, duration) {
+      var range = end - start;
+      var current = start;
+      var increment = end > start? 1 : -1;
+      var stepTime = Math.abs(Math.floor(duration / range));
+      var obj = id;
+      var bar = $(obj).parent().prev();
+      console.log(bar);
+      var timer = setInterval(function() {
+          current += increment;
+          var txt = current + "%"
+          $(bar).css( "width", txt)
+          obj.innerHTML = txt;
+          if (current == end) {
+              clearInterval(timer);
+          }
+      }, stepTime);
+  }
+
+  $(window).on('resize scroll', function() {
+      if ($('#skillDiv').isInViewport()) {
+          // do something
+          if (!countUpDone) {
+            countUpDone = true
+            $( ".skill-text > span" ).each(function(){
+              var targetVal = Number($(this).text());
+              $(this).css('display', 'block')
+              var duration = targetVal*50;
+              animateValue(this, 0, targetVal, duration);
+            });
+          }
+      } else {
+          // do something else
+      }
+  });
+
   $(document).ready(function() {
       $("#loadingDiv").fadeOut(1500)
-
+      $( ".skill-text > span" ).css('display', 'none');
       $("#continue-btn").click(function (){
         $('html,body').animate({scrollTop:$('#section2').offset().top}, 1000);
       });
   });
+
+  $( window ).load(function() {
+      
+  });
+
+
 </script>
 </body>
 
