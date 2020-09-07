@@ -74,15 +74,14 @@
   });
 
   $(document).ready(function() {
-      $("#loadingDiv").fadeOut(1500)
       $( ".skill-text > span" ).css('display', 'none');
       $("#continue-btn").click(function (){
         $('html,body').animate({scrollTop:$('#section2').offset().top}, 1000);
       });
   });
 
-  $( window ).load(function() {
-      
+  $(window).on('load', function () {
+       $("#loadingDiv").fadeOut(1500)
   });
 
 

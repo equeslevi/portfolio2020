@@ -484,6 +484,7 @@ canvas {
 }
 #section2 .skills-container .skillbar {
   height: 30px;
+  width: 1%;
   margin-top: 3%;
   background-color: #fbc638 !important;
   display: flex;
