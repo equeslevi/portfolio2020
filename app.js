@@ -3,6 +3,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const tynt = require('tynt');
 const moment = require('moment');
+const nodemailer = require('nodemailer');
 let isDbConnected = false
 const fs = require('fs');
 const hbs = exphbs.create({
@@ -56,6 +57,14 @@ function timeStamp(color, text){
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Init middleware
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'jetservices.it.solutions@gmail.COM',
+    pass: 'xcvxcxvxc12@!'
+  },
+  tls: { rejectUnauthorized: false }
+});
 
 // Handlebars Middleware
 app.engine('.jets', hbs.engine);
@@ -80,18 +89,29 @@ app.get('/', (req, res)=>{
 	});
 });
 
-app.get('/phaelectionsm', (req, res)=>{
-	var phaMetaTitle = 'PHA ELECTIONS 2020'
-	var phaMetaDesc = 'Welcome to PHA online elections 2020! Enjoy hassle free voting! Practice your right to vote now!'
-	var phaMetaImg = "https://rjustineduardo.com/images/phameta.jpg"
-	var phaMetaUrl = 'https://pha2020.vs-elections.com'
-	res.render('electionMaintenance', { 
-		title: phaMetaTitle,
-		assoc: 'PHA',
-		metaTitle: phaMetaTitle,
-		metaDesc: phaMetaDesc,
-		metaImg: phaMetaImg,
-		metaUrl: phaMetaUrl
+app.post('/sendmail', (req, res)=>{
+
+	console.log('sending email')
+	let name = req.body.name
+	let company = req.body.company
+	let email = req.body.email
+	let message = req.body.message
+	let text = '<h1>THANK YOU FOR YOUR INQUIRY</h1><h3>We will respond you shortly...</h3><br><p>name: '+name+'</p><p>company: '+company+'</p><p>email: '+email+'</p><p>message: '+message+'</p>'
+	const mailOptions = {
+	  from: 'jetservices.it.solutions@gmail.com',
+	  to: email,
+	  bcc: 'jetservices.it.solutions@gmail.com',
+	  subject: 'JET SERVICES - Thank you for your inquiry!',
+	  html: text
+	};
+
+	transporter.sendMail(mailOptions, function(error, info){
+	  if (error) {
+	    console.log(error);
+	  } else {
+	    console.log('Email sent: ' + info.response);
+	    res.send('ok')
+	  }
 	});
 });
 

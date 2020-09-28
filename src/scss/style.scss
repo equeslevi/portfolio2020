@@ -359,6 +359,120 @@ canvas {
 #section3{
   display: none;
 }
+
+
+#section4{
+  .wrapper{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+      "lspc form form form form form form rspc";
+    align-items: center;
+    background-color: $white;
+
+    input, select, textarea{
+      font-size: 0.9em;
+    }
+
+    #contact-head{
+      font-size: 1.5em;
+      text-decoration: underline;
+      text-shadow: 4px 4px $jet;
+      margin-bottom: 2%;
+    }
+  }
+
+
+  .spacer-l{
+    grid-area: lspc;
+    height: 100%;
+    background: $jet;
+  }
+
+  .spacer-r{
+    grid-area: rspc;
+    height: 100%;
+    background: $jet;
+  }
+
+  /* Style inputs, select elements and textareas */
+  input[type=text], input[type=email], select, textarea{
+    width: 100%;
+    padding: 12px;
+    font-family: "Poppins", sans-serif;
+    border: 4px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+  /* Style the label to display next to the inputs */
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  /* Style the submit button */
+  button {
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    background: $yellow;
+    color: $jet;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  /* Style the container */
+  .container {
+    grid-area: form;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: "Poppins", sans-serif;
+    color: $white;
+    background: $navy;
+
+    .requiredTxt{
+    display: block;
+    font-size: 0.9em;
+    margin: 0;
+    color: $danger;
+    }
+  }
+
+  /* Floating column for labels: 25% width */
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
 @media only screen and (max-width: 1000px) {
   html body{
     font-size: 1.2em
@@ -393,6 +507,25 @@ canvas {
         margin-left: 5%;
         padding-bottom: 30px;
       }      
+    }
+
+    #section4{
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 0.05fr;
+        grid-template-areas:
+          "form form"
+          "rspc lspc";
+
+        input, select, textarea{
+          font-size: 1.2em;
+        }
+      }
+
+      .col-25, .col-75, button {
+        width: 100%;
+        margin-top: 0;
+      }
     }
 }
 

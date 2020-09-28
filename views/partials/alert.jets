@@ -1,4 +1,0 @@
-<div id="alert" class="alertbar {{alerttype}} {{#unless alertMsg}}d-none{{/unless}}">
-  <span class="closebtn">&times;</span>  
-  <strong><div class='alertMsg'>{{alertMsg}}</div></strong> 
-</div>

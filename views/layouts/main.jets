@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <title>RJustinEduardo.com</title>
-
+  <meta name="viewport" content="user-scalable=no">
   <script data-ad-client="ca-pub-2410484337115510" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
@@ -75,10 +75,9 @@
 
   $(document).ready(function() {
       $( ".skill-text > span" ).css('display', 'none');
-
-      $('html,body').animate({scrollTop:$('#section1').offset().top}, 1);
+      $('.requiredTxt').fadeOut(5);
       $('body').css('overflow-y','hidden');
-
+      $("#sendingCaption").fadeOut(1);
       $("#continue-btn").click(function (){
         $('html,body').animate({scrollTop:$('#section2').offset().top}, 1000);
       });
@@ -87,9 +86,59 @@
   $(window).on('load', function () {
        $("#loadingDiv").fadeOut(1500);
        $("body").css('overflow-y','auto');
+       $('html,body').animate({scrollTop:$('#section1').offset().top}, 1);
   });
+</script>
+<script type="text/javascript">
+  $('#btn-submit').click(function (){
+        //ajax to sendmail
+        const name = $('#name').val();
+        const email = $('#email').val();
+        const company = $('#company').val();
+        const message = $('#message').val();
+        console.log(name+email+company+message)
+        let checker = 0
+        if (name!= "") {checker++;$('.name').text('');} else {$('.name').text('*Required');}
+        if (email!= "") {checker++;$('.email').text('');} else {$('.email').text('*Required');}
+        if (company!= "") {checker++;$('.company').text('');} else {$('.company').text('*Required');}
+        if (message!= "") {checker++;$('.message').text('');} else {$('.message').text('*Required');}
+        $('.requiredTxt').fadeIn(5);
+        $('.requiredTxt').fadeOut(5000);
+        if (checker>=4) {
+          $("#sendingCaption").text('Sending your message...');
+          $("#sendingCaption").fadeIn(1);
+          $('#btn-submit').attr("disabled", true);
+          $.ajax({
+              url: '/sendmail',
+              type: 'POST',
+              contentType: 'application/json',
+              data: JSON.stringify(
+                {
+                  "name": name,
+                  "company": company,
+                  "email": email,
+                  "message": message
+                }),
+              success: function(response){
+                $('#name').val('');
+                $('#email').val('');
+                $('#company').val('');
+                $('#message').val('');
+                $("#sendingCaption").text('Messaage Sent!');
+                $("#sendingCaption").fadeOut(3000);
+                $('#btn-submit').attr("disabled", false);
+              },
+              error: function(response){
+                console.log(response);
+                $("#sendingCaption").text('Sending failed...');
+                $("#sendingCaption").fadeOut(3000);
+                $('#btn-submit').attr("disabled", false);
+              }
+          });
+        }
 
 
+      });
 </script>
 </body>
 

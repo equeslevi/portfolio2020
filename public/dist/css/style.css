@@ -495,6 +495,103 @@ canvas {
   display: none;
 }
 
+#section4 {
+  /* Style inputs, select elements and textareas */
+  /* Style the label to display next to the inputs */
+  /* Style the submit button */
+  /* Style the container */
+  /* Floating column for labels: 25% width */
+  /* Floating column for inputs: 75% width */
+  /* Clear floats after the columns */
+}
+#section4 .wrapper {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5em;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+  grid-template-areas: "lspc form form form form form form rspc";
+  align-items: center;
+  background-color: white;
+}
+#section4 .wrapper input, #section4 .wrapper select, #section4 .wrapper textarea {
+  font-size: 0.9em;
+}
+#section4 .wrapper #contact-head {
+  font-size: 1.5em;
+  text-decoration: underline;
+  text-shadow: 4px 4px #333333;
+  margin-bottom: 2%;
+}
+#section4 .spacer-l {
+  grid-area: lspc;
+  height: 100%;
+  background: #333333;
+}
+#section4 .spacer-r {
+  grid-area: rspc;
+  height: 100%;
+  background: #333333;
+}
+#section4 input[type=text], #section4 input[type=email], #section4 select, #section4 textarea {
+  width: 100%;
+  padding: 12px;
+  font-family: "Poppins", sans-serif;
+  border: 4px solid #000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+#section4 label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+#section4 button {
+  font-family: "Poppins", sans-serif;
+  font-size: 1em;
+  background: #fbc638;
+  color: #333333;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+#section4 .container {
+  grid-area: form;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: #14213d;
+}
+#section4 .container .requiredTxt {
+  display: block;
+  font-size: 0.9em;
+  margin: 0;
+  color: #dc3545;
+}
+#section4 .col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+#section4 .col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+#section4 .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @media only screen and (max-width: 1000px) {
   html body {
     font-size: 1.2em;
@@ -509,6 +606,19 @@ canvas {
     margin-right: 5%;
     margin-left: 5%;
     padding-bottom: 30px;
+  }
+
+  #section4 .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.05fr;
+    grid-template-areas: "form form" "rspc lspc";
+  }
+  #section4 .wrapper input, #section4 .wrapper select, #section4 .wrapper textarea {
+    font-size: 1.2em;
+  }
+  #section4 .col-25, #section4 .col-75, #section4 button {
+    width: 100%;
+    margin-top: 0;
   }
 }
 @keyframes shake {

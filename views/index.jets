@@ -218,6 +218,58 @@
     <div class="btn-lines"><button>Start Tour <i class="fas fa-fighter-jet"></i></button></div>
   </div>
 
+  <div id="section4"><!-- contactus -->
+    <div class="wrapper">
+      <div class="spacer-l"></div>
+      <div class="spacer-r"></div>
+      <div class="container">
+          <div class="row" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
+            <div id="contact-head">Contact me!</div>
+          </div>
+          <div class="row" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
+            <div class="col-25">
+              <label for="name">Name: <span class="name requiredTxt"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+          </div>
+          <div class="row" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
+            <div class="col-25">
+              <label for="company">Company: <span class="company requiredTxt"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="company" name="company" placeholder="Enter your company">
+            </div>
+          </div>
+          <div class="row" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
+            <div class="col-25">
+              <label for="email">Email: <span class="email requiredTxt"></span></label>
+            </div>
+            <div class="col-75">
+              <input type="email" id="email" name="email" placeholder="Enter your e-mail">
+            </div>
+          </div>
+          <div class="row" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
+            <div class="col-25">
+              <label for="message">Message: <span class="message requiredTxt"></span></label>
+            </div>
+            <div class="col-75">
+              <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+            </div>
+          </div>
+          <div class="row" data-aos="zoom-out" data-aos-anchor-placement="bottom-bottom">
+            <button id="btn-submit">Submit</button>
+          </div>
+          <div id="sendingCaption">Sending your message...</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer">
+    testing
+  </div>
+
   <div id="loadingDiv">
     <div class="load-icon">
       <div class="loader"></div>
